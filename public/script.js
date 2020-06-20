@@ -16,7 +16,6 @@ document.getElementById("uploadExls").addEventListener("click", event => {
           workbook.Sheets[sheet]
         );
 
-        document.getElementById("val").innerHTML = JSON.stringify(rowObject);
         fetch("/upload", {
           method: "POST",
           body: JSON.stringify(rowObject),
