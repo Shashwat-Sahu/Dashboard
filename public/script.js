@@ -43,7 +43,7 @@ document.getElementById("entry").addEventListener("click", () => {
     .then(response => response.json())
     .then(data => {var i;
       for (i = 0; i < data.length; i++)
-        if (uid == data[i].UID && diff == parseInt(data[i].Date)) {
+        if (uid == data[i]["Emp ID"] && diff == parseInt(data[i].Date)) {
           
     document.getElementById("loader1").style.display = "none";
           var div1 = document.getElementById("candidate");
