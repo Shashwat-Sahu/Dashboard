@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/78055610ae.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row bg-dark p-2">
+        <div class="col">
+          <h2 class="text-white text-center">
+            Personal Data Dashboard
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 d-flex justify-content-center mt-3 mb-3">
+          <h1>
+            Welcome Neha !
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-8 text-center">
+          <input type="file" class="form-control" id="fileUpload" required />
+          <button type="submit" class="btn btn-primary mt-2" id="uploadExls">
+            Upload
+          </button>
+          <div
+            class="spinner-border ml-3"
+            role="status"
+            style="display:none"
+            id="loader"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p id="val"></p>
+        </div>
+      </div>
+      <div class="row mt-3 d-flex justify-content-center">
+        <div class="col-8 text-center">
+          <input
+            type="text"
+            placeholder="Enter UID"
+            class="form-control"
+            id="uid_entry"
+            required
+          />
+          <input
+            type="date"
+            class="form-control mt-3"
+            id="date_entry"
+            required
+          />
+          <button type="submit" class="btn btn-success mt-2" id="entry">
+            Submit
+          </button>
+          <div
+            class="spinner-border ml-3 mt-2"
+            role="status"
+            style="display:none"
+            id="loader1"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3 d-flex justify-content-center">
+        <div class="col-10 bg-dark text-white mb-3">
+          <div id="candidate" style="display:none">
+            <hr />
+            UID:
+            <span></span><br />
+            <hr />
+            Date:
+            <span></span><br />
+            <hr />
+            Emp ID:
+            <span></span><br />
+            <hr />
+            Agent ID:
+            <span></span><br />
+            <hr />
+            Agent Name:
+            <span></span><br />
+            <hr />
+            Skill:
+            <span></span><br />
+            <hr />
+            Profile:
+            <span></span><br />
+            <hr />
+            Team Leader:
+            <span></span><br />
+            <hr />
+            PreShift:
+            <span></span><br />
+            <hr />
+            AM:
+            <span></span><br />
+            <hr />
+            Shift:
+            <span></span><br />
+            <hr />
+            LOB:
+            <span></span><br />
+            <hr />
+            DOJ:
+            <span></span><br />
+            <hr />
+            FHD:
+            <span></span><br />
+            <hr />
+            Roster:
+            <span></span><br />
+            <hr />
+            Seating Plan:
+            <span></span><br />
+            <hr />
+            ACDCalls:
+            <span></span><br />
+            <hr />
+            Extn_Outcalls:
+            <span></span><br />
+            <hr />
+            AHT:
+            <span></span><br />
+            <hr />
+            ACDTime:
+            <span></span><br />
+            <hr />
+            ACWTime:
+            <span></span><br />
+            <hr />
+            RingTime:
+            <span></span><br />
+            <hr />
+            HoldTime:
+            <span></span><br />
+            <hr />
+            OtherTime:
+            <span></span><br />
+            <hr />
+            BreakAUX:
+            <span></span><br />
+            <hr />
+            BioBreak:
+            <span></span><br />
+            <hr />
+            TeaBreak:
+            <span></span><br />
+            <hr />
+            LunchBreak:
+            <span></span><br />
+            <hr />
+            BriefingAux:
+            <span></span><br />
+            <hr />
+            Missed Attend Aux:
+            <span></span><br />
+            <hr />
+            Extended ACW Aux:
+            <span></span><br />
+            <hr />
+            TechnicalAux:
+            <span></span><br />
+            <hr />
+            MedicalAux:
+            <span></span><br />
+            <hr />
+            SystemOutage:
+            <span></span><br />
+            <hr />
+            IdleAux:
+            <span></span><br />
+            <hr />
+            AvailTime:
+            <span></span><br />
+            <hr />
+            StaffTime:
+            <span></span><br />
+            <hr />
+            Net Login:
+            <span></span><br />
+            <hr />
+            Downtime as Per MIS:
+            <span></span><br />
+            <hr />
+            Downtime 1:
+            <span></span><br />
+            <hr />
+            Reason 1:
+            <span></span><br />
+            <hr />
+            Downtime 2:
+            <span></span><br />
+            <hr />
+            Reason 2:
+            <span></span><br />
+            <hr />
+            Downtime 3:
+            <span></span><br />
+            <hr />
+            Reason 3:
+            <span></span><br />
+            <hr />
+            Downtime 4:
+            <span></span><br />
+            <hr />
+            Reason 4:
+            <span></span><br />
+            <hr />
+            Average Response Time:
+            <span></span><br />
+            <hr />
+            Event Created:
+            <span></span><br />
+            <hr />
+            Total Response Time:
+            <span></span><br />
+            <hr />
+            CQ Score:
+            <span></span><br />
+            <hr />
+            Audit Count:
+            <span></span><br />
+            <hr />
+            Fatal Flag:
+            <span></span><br />
+            <hr />
+            TQS:
+            <span></span><br />
+            <hr />
+            Attendance by Ops:
+            <span></span><br />
+            <hr />
+            Attendance:
+            <span></span><br />
+            <hr />
+            Mandays:
+            <span></span><br />
+            <hr />
+            Absent Count:
+            <span></span><br />
+            <hr />
+            WO Count:
+            <span></span><br />
+            <hr />
+            Leave Count:
+            <span></span><br />
+            <hr />
+            Rostered:
+            <span></span><br />
+            <hr />
+            Attrition_Count:
+            <span></span><br />
+            <hr />
+            Opening Count:
+            <span></span><br />
+            <hr />
+            Closing Count:
+            <span></span><br />
+            <hr />
+            Net Login With Downtime:
+            <span></span><br />
+            <hr />
+            OP Count:
+            <span></span><br />
+            <hr />
+            CP Count:
+            <span></span><br />
+            <hr />
+            Test:
+            <span></span><br />
+            <hr />
+            Double WO check:
+            <span></span><br />
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
