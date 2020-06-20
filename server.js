@@ -30,7 +30,7 @@ app.get("/callit",(req,res)=>{
 })
 app.post("/check",(req,res)=>{
   console.log(req.body);
-  if(req.body.pass==process.env.PASSWORD)
+  if(req.body.pass=='neha@2016')
     {
       res.sendFile(__dirname + "/views/index.html")
     }
