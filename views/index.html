@@ -18,17 +18,18 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row bg-dark p-2">
+      <div class="row bg-dark p-3">
         <div class="col">
           <h2 class="text-white text-center">
-            Personal Data Dashboard
+            Personal Data Dashboard <i class="fas fa-columns"></i>
           </h2>
+          
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container">
+      <div class="row border-left border-right">
         <div class="col-8 d-flex justify-content-center mt-3 mb-3">
           <h1>
             Welcome Neha !
@@ -36,15 +37,18 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container  border-left border-right border-bottom">
       <div class="row d-flex justify-content-center">
-        <div class="col-8 text-center">
-          <input type="file" class="form-control" id="fileUpload" required />
-          <button type="submit" class="btn btn-primary mt-2" id="uploadExls">
+        <div class="col-sm-8 text-center">
+          <input type="file" class="border p-2" id="fileUpload" required />
+          <p>
+            Uploadation may take few minutes
+          </p>
+          <button type="submit" class="btn btn-primary mt-1" id="uploadExls">
             Upload
           </button>
           <div
-            class="spinner-border ml-3 mt-2"
+            class="spinner-border ml-3 mt-1"
             role="status"
             style="display:none"
             id="loader"
@@ -54,7 +58,11 @@
         </div>
       </div>
       <div class="row mt-3 d-flex justify-content-center">
-        <div class="col-8 text-center">
+        <h2>
+            Search
+          </h2>
+        <div class="col-sm-8 text-center">
+          
           <input
             type="text"
             placeholder="Enter UID"
@@ -68,6 +76,9 @@
             id="date_entry"
             required
           />
+          <p>
+            Search might be slow due to large database.
+          </p>
           <button type="submit" class="btn btn-success mt-2" id="entry">
             Submit
           </button>
@@ -82,7 +93,7 @@
         </div>
       </div>
       <div class="row mt-3 d-flex justify-content-center">
-        <div class="col-10 bg-dark text-white mb-3">
+        <div class="col-sm-10 bg-dark text-white mb-5">
           <div id="candidate" style="display:none">
             <hr />
             UID:
@@ -292,6 +303,15 @@
             Double WO check:
             <span></span><br />
             <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid fixed-bottom">
+      <div class="row bg-dark">
+        <div class="col text-center text-white p-2">
+          <div>
+            Developed By Shashwat <i class="fas fa-code"></i>
           </div>
         </div>
       </div>
